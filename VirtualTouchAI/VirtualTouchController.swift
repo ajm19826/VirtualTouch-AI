@@ -17,6 +17,9 @@ final class VirtualTouchController: ObservableObject {
     @Published var accessibilityStatus = "Checking..."
     @Published var voiceClickEnabled = false
     @Published var voiceClickStatus = "Voice click is off"
+    @Published var mirrorCameraX: Bool = UserDefaults.standard.object(forKey: "MirrorCameraX") as? Bool ?? true {
+        didSet { UserDefaults.standard.set(mirrorCameraX, forKey: "MirrorCameraX") }
+    }
     @Published var positionGuidance = "Position guidance will appear when tracking starts"
     @Published var gestureName = "Point"
     @Published var dragActive = false

@@ -3,7 +3,7 @@ set -e
 PROJECT_DIR="/Volumes/Other Storage/GitHub Projects/VirtualTouch AI"
 APP="$HOME/Library/Developer/Xcode/DerivedData/VirtualTouchAI-cnerafrqzbvejjblfvmswfpevffv/Build/Products/Release/VirtualTouch AI.app"
 STAGING="$PROJECT_DIR/Release/DMG-Staging"
-OUTPUT="$PROJECT_DIR/Release/VirtualTouch-AI-Beta-1.5.4-Build-13.dmg"
+OUTPUT="$PROJECT_DIR/Release/VirtualTouch-AI-Beta-1.6-Build-14.dmg"
 
 rm -rf "$STAGING"
 mkdir -p "$STAGING"

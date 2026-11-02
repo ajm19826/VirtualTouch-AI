@@ -24,7 +24,7 @@ struct ContentView: View {
                 .frame(minWidth: 640, minHeight: 500)
         }
         .overlay(alignment: .bottomTrailing) {
-            Text("BETA 1.5.4 · BUILD 13")
+            Text("BETA 1.6 · BUILD 14")
                 .font(.system(size: 10, weight: .semibold, design: .rounded))
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 8)
@@ -283,6 +283,7 @@ struct SettingsView: View {
             Slider(value: $controller.clickCooldown, in: 0.4...3) { Text("Click cooldown") }
             Slider(value: $controller.smoothing, in: 0.0...0.95) { Text("Cursor smoothing") }
             Toggle("Dwell-to-click", isOn: $controller.dwellClickEnabled)
+            Toggle("Mirror camera horizontally", isOn: $controller.mirrorCameraX)
             Toggle("Say 'Click'", isOn: Binding(get: { controller.voiceClickEnabled }, set: { controller.setVoiceClick($0) }))
             Text(controller.voiceClickStatus).font(.caption).foregroundStyle(.secondary)
         }.padding(24)

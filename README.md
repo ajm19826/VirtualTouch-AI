@@ -4,9 +4,11 @@ VirtualTouch AI is a native macOS utility that uses a webcam, Apple Vision landm
 
 ## Download
 
-**Current beta: Build 13 (`BETA 1.5.4`)**
+**Current beta: Build 14 (`BETA 1.6`)**
 
-- [Download VirtualTouch AI Build 13 DMG](Release/VirtualTouch-AI-Beta-1.5.4-Build-13.dmg)
+- [Download VirtualTouch AI Build 14 DMG](Release/VirtualTouch-AI-Beta-1.6-Build-14.dmg)
+
+Previous release: [Build 13](Release/VirtualTouch-AI-Beta-1.5.4-Build-13.dmg)
 
 Open the DMG and drag `VirtualTouch AI.app` into `Applications`. On first launch, grant Camera and Accessibility access.
 

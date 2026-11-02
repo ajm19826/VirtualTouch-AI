@@ -4,8 +4,8 @@
 <dict>
   <key>CFBundleDisplayName</key><string>VirtualTouch AI</string>
   <key>CFBundleName</key><string>VirtualTouch AI</string>
-  <key>CFBundleShortVersionString</key><string>1.5.4</string>
-  <key>CFBundleVersion</key><string>13</string>
+  <key>CFBundleShortVersionString</key><string>1.6</string>
+  <key>CFBundleVersion</key><string>14</string>
   <key>NSSpeechRecognitionUsageDescription</key><string>VirtualTouch AI can optionally recognize the local voice commands "Click" and "Stop".</string>
   <key>NSMicrophoneUsageDescription</key><string>VirtualTouch AI listens locally for the optional voice commands "Click" and "Stop".</string>
   <key>LSApplicationCategoryType</key><string>public.app-category.utilities</string>

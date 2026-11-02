@@ -13,6 +13,8 @@ final class PredictionEngine {
     private(set) var confidence: Double = 0
     private var previous: CGPoint = .zero
     private var history: [CGPoint] = []
+    private var previousRawPoint: CGPoint = .zero
+    private var velocity: CGPoint = .zero
     var sampleCount: Int { samples.count }
 
     func clear() { samples.removeAll(keepingCapacity: true); confidence = 0; history.removeAll() }
@@ -38,15 +40,25 @@ final class PredictionEngine {
     func predict(frame: PoseFrame) -> CGPoint? {
         if let finger = frame.indexTip {
             let screenFrame = NSScreen.main?.frame ?? CGRect(x: 0, y: 0, width: 1920, height: 1080)
-            let point = CGPoint(x: screenFrame.minX + finger.x * screenFrame.width,
-                                y: screenFrame.minY + finger.y * screenFrame.height)
+            let mirrorCameraX = UserDefaults.standard.object(forKey: "MirrorCameraX") as? Bool ?? true
+            let cameraX = mirrorCameraX ? 1 - finger.x : finger.x
+            let rawPoint = CGPoint(x: screenFrame.minX + cameraX * screenFrame.width,
+                                   y: screenFrame.minY + finger.y * screenFrame.height)
+            let point = rawPoint
             confidence = max(frame.confidence, 0.85)
             history.append(point)
             if history.count > 5 { history.removeFirst() }
-            let distance = previous == .zero ? 1000 : hypot(point.x - previous.x, point.y - previous.y)
-            let alpha: CGFloat = distance > 180 ? 0.82 : (distance > 45 ? 0.68 : 0.52)
-            let pointer = CGPoint(x: previous == .zero ? point.x : previous.x + (point.x - previous.x) * alpha,
-                                  y: previous == .zero ? point.y : previous.y + (point.y - previous.y) * alpha)
+            let rawVelocity = CGPoint(x: previousRawPoint == .zero ? 0 : point.x - previousRawPoint.x,
+                                      y: previousRawPoint == .zero ? 0 : point.y - previousRawPoint.y)
+            velocity = CGPoint(x: velocity.x * 0.35 + rawVelocity.x * 0.65,
+                               y: velocity.y * 0.35 + rawVelocity.y * 0.65)
+            let predicted = CGPoint(x: point.x + velocity.x * 0.25,
+                                    y: point.y + velocity.y * 0.25)
+            let distance = previous == .zero ? 1000 : hypot(predicted.x - previous.x, predicted.y - previous.y)
+            let alpha: CGFloat = distance > 140 ? 0.78 : (distance > 40 ? 0.64 : 0.46)
+            let pointer = CGPoint(x: previous == .zero ? predicted.x : previous.x + (predicted.x - previous.x) * alpha,
+                                  y: previous == .zero ? predicted.y : previous.y + (predicted.y - previous.y) * alpha)
+            previousRawPoint = point
             previous = pointer
             return pointer
         }
