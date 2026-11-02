@@ -5,5 +5,6 @@ Release/DMG-Staging/
 xcuserdata/
 .DS_Store
 *.dmg
+!/Release/VirtualTouch-AI-Beta-1.5.4-Build-13.dmg
 *.zip
 *.log
