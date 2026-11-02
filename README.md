@@ -19,9 +19,6 @@ Open the DMG and drag `VirtualTouch AI.app` into `Applications`. On first launch
 - Built-in or external webcam
 - Camera permission
 - Accessibility permission for cursor movement and clicks
-
-Apple's hand and body pose APIs are unavailable on older macOS releases. Build 13 targets macOS 12 and later.
-
 ## Features
 
 - Direct index-finger cursor tracking
