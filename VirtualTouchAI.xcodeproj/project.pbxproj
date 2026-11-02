@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		071F6BED77CC61D7E77CCF1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643A1A6FDD11F9D5F5A344E1 /* ContentView.swift */; };
+		1369D07DA44CD4CE04DE2BE5 /* PredictionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CC8D530FFB08D99404E6F /* PredictionEngine.swift */; };
+		1D347255DD37EBD6DD677BB6 /* VoiceClickRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4E03B9EE24B1975486272 /* VoiceClickRecognizer.swift */; };
+		24881106D025DE265BF439B8 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E67D394852B7B8B802A6F55 /* CameraController.swift */; };
+		30E142393F1F3526B621F33E /* VirtualTouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73134AA262A35053A74A02A1 /* VirtualTouchController.swift */; };
+		3F5CD1ADDA4F2B16D9D6F1BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A863A0E6E664505A4C4C9498 /* Assets.xcassets */; };
+		40144974C506ACF9F5AD4903 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3434A6B4405121DF0782666E /* Accelerate.framework */; };
+		73A865D5EFAD4BD47565C608 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4AFF6EE1D9E7A76A8961D9 /* CoreImage.framework */; };
+		78A9126CA6BA88D2D07298A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96628950757DD277AB8E543A /* Cocoa.framework */; };
+		81104EE9F0279059CAB8B038 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FFFF8D68B52A040DA2E75B /* AppKit.framework */; };
+		AD222DDA3F868E5984CB107F /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0F9EF18728B5E7C35AC476 /* InputController.swift */; };
+		BFF3EA15DA2991E3A92D8AE1 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F01421833BA700977A5EAF1 /* Vision.framework */; };
+		C3C25E25526A6866635A7219 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF173D8A4FF2CB1088B80C2E /* AVFoundation.framework */; };
+		D50A8FF28EB04419870E9A07 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E5D77D04920C1C909D351 /* App.swift */; };
+		E74F0C5A22F53B799CC4B62B /* OverlayWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20854E0C07B774AB988188C5 /* OverlayWindows.swift */; };
+		EA0398CC01FD6DECF0051980 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE382541199031EE6B878F3B /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1FC4E03B9EE24B1975486272 /* VoiceClickRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VoiceClickRecognizer.swift; path = VirtualTouchAI/VoiceClickRecognizer.swift; sourceTree = "<group>"; };
+		20854E0C07B774AB988188C5 /* OverlayWindows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayWindows.swift; path = VirtualTouchAI/OverlayWindows.swift; sourceTree = "<group>"; };
+		3434A6B4405121DF0782666E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		4A6B4779E49F5CA69D50093B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
+		643A1A6FDD11F9D5F5A344E1 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = VirtualTouchAI/ContentView.swift; sourceTree = "<group>"; };
+		6E67D394852B7B8B802A6F55 /* CameraController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraController.swift; path = VirtualTouchAI/CameraController.swift; sourceTree = "<group>"; };
+		73134AA262A35053A74A02A1 /* VirtualTouchController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VirtualTouchController.swift; path = VirtualTouchAI/VirtualTouchController.swift; sourceTree = "<group>"; };
+		7D4AFF6EE1D9E7A76A8961D9 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
+		7F01421833BA700977A5EAF1 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Vision.framework; sourceTree = DEVELOPER_DIR; };
+		7F5CC8D530FFB08D99404E6F /* PredictionEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PredictionEngine.swift; path = VirtualTouchAI/PredictionEngine.swift; sourceTree = "<group>"; };
+		96628950757DD277AB8E543A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		97FFFF8D68B52A040DA2E75B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		A863A0E6E664505A4C4C9498 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = VirtualTouchAI/Assets.xcassets; sourceTree = "<group>"; };
+		AD5E5D77D04920C1C909D351 /* App.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = App.swift; path = VirtualTouchAI/App.swift; sourceTree = "<group>"; };
+		AF173D8A4FF2CB1088B80C2E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		CA0F9EF18728B5E7C35AC476 /* InputController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputController.swift; path = VirtualTouchAI/InputController.swift; sourceTree = "<group>"; };
+		DE382541199031EE6B878F3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		E8B8999F9BA5274006C1ECF5 /* VirtualTouchAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTouchAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A2A1020C7ECDC8B2C55BFEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78A9126CA6BA88D2D07298A4 /* Cocoa.framework in Frameworks */,
+				81104EE9F0279059CAB8B038 /* AppKit.framework in Frameworks */,
+				C3C25E25526A6866635A7219 /* AVFoundation.framework in Frameworks */,
+				BFF3EA15DA2991E3A92D8AE1 /* Vision.framework in Frameworks */,
+				EA0398CC01FD6DECF0051980 /* CoreGraphics.framework in Frameworks */,
+				73A865D5EFAD4BD47565C608 /* CoreImage.framework in Frameworks */,
+				40144974C506ACF9F5AD4903 /* Accelerate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AFB458CA3B3972D8E330C71 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				96628950757DD277AB8E543A /* Cocoa.framework */,
+				97FFFF8D68B52A040DA2E75B /* AppKit.framework */,
+				AF173D8A4FF2CB1088B80C2E /* AVFoundation.framework */,
+				7F01421833BA700977A5EAF1 /* Vision.framework */,
+				DE382541199031EE6B878F3B /* CoreGraphics.framework */,
+				7D4AFF6EE1D9E7A76A8961D9 /* CoreImage.framework */,
+				3434A6B4405121DF0782666E /* Accelerate.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		0EB196C3C9F31BE50FBE1E23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8B8999F9BA5274006C1ECF5 /* VirtualTouchAI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D66DE9F553C27313DB3CBEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AFB458CA3B3972D8E330C71 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		645A41D44994D4A1B4D9D1F8 = {
+			isa = PBXGroup;
+			children = (
+				0EB196C3C9F31BE50FBE1E23 /* Products */,
+				4D66DE9F553C27313DB3CBEA /* Frameworks */,
+				F8D7F2DEC0E8022495FCDE14 /* VirtualTouchAI */,
+				66A284AA2590736DA6488F67 /* Resources */,
+				D0D15666D25222305E9651E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66A284AA2590736DA6488F67 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A6B4779E49F5CA69D50093B /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D0D15666D25222305E9651E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8D7F2DEC0E8022495FCDE14 /* VirtualTouchAI */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E5D77D04920C1C909D351 /* App.swift */,
+				6E67D394852B7B8B802A6F55 /* CameraController.swift */,
+				643A1A6FDD11F9D5F5A344E1 /* ContentView.swift */,
+				CA0F9EF18728B5E7C35AC476 /* InputController.swift */,
+				20854E0C07B774AB988188C5 /* OverlayWindows.swift */,
+				7F5CC8D530FFB08D99404E6F /* PredictionEngine.swift */,
+				73134AA262A35053A74A02A1 /* VirtualTouchController.swift */,
+				1FC4E03B9EE24B1975486272 /* VoiceClickRecognizer.swift */,
+				A863A0E6E664505A4C4C9498 /* Assets.xcassets */,
+			);
+			name = VirtualTouchAI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB7B682A393752F80D4F15A2 /* VirtualTouchAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDAF77B9D659A6C2042A4D5E /* Build configuration list for PBXNativeTarget "VirtualTouchAI" */;
+			buildPhases = (
+				01BA38196B3A508D56FA1045 /* Sources */,
+				9A2A1020C7ECDC8B2C55BFEE /* Frameworks */,
+				63E9BB1BB114C94BA9C0C7F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VirtualTouchAI;
+			productName = "VirtualTouch AI";
+			productReference = E8B8999F9BA5274006C1ECF5 /* VirtualTouchAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D24C29B03846D1BD6578F894 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = ADAE20389E6B1D0D750EB80E /* Build configuration list for PBXProject "VirtualTouchAI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 645A41D44994D4A1B4D9D1F8;
+			productRefGroup = 0EB196C3C9F31BE50FBE1E23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB7B682A393752F80D4F15A2 /* VirtualTouchAI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63E9BB1BB114C94BA9C0C7F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F5CD1ADDA4F2B16D9D6F1BD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01BA38196B3A508D56FA1045 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50A8FF28EB04419870E9A07 /* App.swift in Sources */,
+				24881106D025DE265BF439B8 /* CameraController.swift in Sources */,
+				071F6BED77CC61D7E77CCF1E /* ContentView.swift in Sources */,
+				AD222DDA3F868E5984CB107F /* InputController.swift in Sources */,
+				E74F0C5A22F53B799CC4B62B /* OverlayWindows.swift in Sources */,
+				1369D07DA44CD4CE04DE2BE5 /* PredictionEngine.swift in Sources */,
+				30E142393F1F3526B621F33E /* VirtualTouchController.swift in Sources */,
+				1D347255DD37EBD6DD677BB6 /* VoiceClickRecognizer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2E760D66CD172CF5479B2F47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "/Volumes/Other Storage/GitHub Projects/VirtualTouch AI/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.virtualtouch.ai;
+				PRODUCT_NAME = "VirtualTouch AI";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BBC2A1A9B22C18834F967B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F45A6A5F211527A750EBFC12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "/Volumes/Other Storage/GitHub Projects/VirtualTouch AI/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.virtualtouch.ai;
+				PRODUCT_NAME = "VirtualTouch AI";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FC859562AF9DD673FF428D3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADAE20389E6B1D0D750EB80E /* Build configuration list for PBXProject "VirtualTouchAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBC2A1A9B22C18834F967B17 /* Debug */,
+				FC859562AF9DD673FF428D3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDAF77B9D659A6C2042A4D5E /* Build configuration list for PBXNativeTarget "VirtualTouchAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45A6A5F211527A750EBFC12 /* Release */,
+				2E760D66CD172CF5479B2F47 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D24C29B03846D1BD6578F894 /* Project object */;
+}

@@ -1,0 +1,9 @@
+DerivedData/
+build/
+Release/DMG-Staging/
+*.xcuserdata/
+xcuserdata/
+.DS_Store
+*.dmg
+*.zip
+*.log

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-"//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleDisplayName</key><string>VirtualTouch AI</string>
+  <key>CFBundleName</key><string>VirtualTouch AI</string>
+  <key>CFBundleShortVersionString</key><string>1.5.4</string>
+  <key>CFBundleVersion</key><string>13</string>
+  <key>NSSpeechRecognitionUsageDescription</key><string>VirtualTouch AI can optionally recognize the local voice commands "Click" and "Stop".</string>
+  <key>NSMicrophoneUsageDescription</key><string>VirtualTouch AI listens locally for the optional voice commands "Click" and "Stop".</string>
+  <key>LSApplicationCategoryType</key><string>public.app-category.utilities</string>
+  <key>NSCameraUsageDescription</key><string>VirtualTouch AI uses the camera locally to track arm and wrist movements for on-screen cursor control.</string>
+  <key>NSHighResolutionCapable</key><true/>
+  <key>NSPrincipalClass</key><string>NSApplication</string>
+  <key>NSSupportsAutomaticGraphicsSwitching</key><true/>
+</dict>
+</plist>
