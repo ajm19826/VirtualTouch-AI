@@ -15,7 +15,7 @@ assets_file = source_group.new_reference(File.join(__dir__, 'VirtualTouchAI', 'A
 target_resources_build_phase = nil
 
 product_group = main_group.new_group('Products')
-target = project.new_target(:application, 'VirtualTouchAI', :osx, '12.0')
+target = project.new_target(:application, 'VirtualTouchAI', :osx, '11.0')
 target.product_name = 'VirtualTouch AI'
 
 target.add_system_framework('AppKit')
@@ -38,7 +38,7 @@ target.build_configurations.each do |config|
   settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.virtualtouch.ai'
   settings['PRODUCT_NAME'] = 'VirtualTouch AI'
   settings['SWIFT_VERSION'] = '5.0'
-  settings['MACOSX_DEPLOYMENT_TARGET'] = '12.0'
+  settings['MACOSX_DEPLOYMENT_TARGET'] = '11.0'
   settings['INFOPLIST_FILE'] = info_file
   settings['CODE_SIGN_STYLE'] = 'Automatic'
   settings['ENABLE_HARDENED_RUNTIME'] = 'YES'

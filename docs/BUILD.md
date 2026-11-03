@@ -2,7 +2,7 @@
 
 ## Environment
 
-- macOS 12 or later for the complete Vision hand/body implementation
+- macOS 11 or later for the hand-pose implementation
 - Xcode with macOS SDK support
 - Ruby and xcodeproj gem
 - External `Other Storage` Xcode path is optional; set `DEVELOPER_DIR` for the desired installation

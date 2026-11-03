@@ -23,7 +23,7 @@ struct PoseFrame: Equatable {
         return leftWrist ?? rightWrist
     }
 
-    static let empty = PoseFrame(leftShoulder: nil, rightShoulder: nil, leftElbow: nil, rightElbow: nil, leftWrist: nil, rightWrist: nil, indexTip: nil, thumbTip: nil, confidence: 0, timestamp: .now)
+    static let empty = PoseFrame(leftShoulder: nil, rightShoulder: nil, leftElbow: nil, rightElbow: nil, leftWrist: nil, rightWrist: nil, indexTip: nil, thumbTip: nil, confidence: 0, timestamp: Date())
 }
 
 final class CameraController: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -153,7 +153,7 @@ final class CameraController: NSObject, ObservableObject, AVCaptureVideoDataOutp
                 }
             }
             let fingerConfidence = indexTip == nil ? 0 : 0.85
-            let frame = PoseFrame(leftShoulder: nil, rightShoulder: nil, leftElbow: nil, rightElbow: nil, leftWrist: indexTip, rightWrist: nil, indexTip: indexTip, thumbTip: thumbTip, confidence: fingerConfidence, timestamp: .now)
+            let frame = PoseFrame(leftShoulder: nil, rightShoulder: nil, leftElbow: nil, rightElbow: nil, leftWrist: indexTip, rightWrist: nil, indexTip: indexTip, thumbTip: thumbTip, confidence: fingerConfidence, timestamp: Date())
             DispatchQueue.main.async { self.latestFrame = frame }
             frames += 1
             if Date().timeIntervalSince(fpsStart) >= 1 {

@@ -358,7 +358,7 @@ final class VirtualTouchController: ObservableObject {
         lastClick = Date()
         clickDetected = true
         input.leftClick(at: input.currentMousePoint())
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { self.clickDetected = false }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.15) { self.clickDetected = false }
     }
 
     private func performClick() {
@@ -366,7 +366,7 @@ final class VirtualTouchController: ObservableObject {
         clickDetected = true
         let clickPoint = predictedPoint == .zero ? input.currentMousePoint() : predictedPoint
         input.leftClick(at: clickPoint)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { self.clickDetected = false }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.15) { self.clickDetected = false }
     }
 
     private func resetDwell() { dwellStart = nil; dwellPoint = nil }

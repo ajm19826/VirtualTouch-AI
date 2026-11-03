@@ -7,5 +7,6 @@ xcuserdata/
 *.dmg
 !/Release/VirtualTouch-AI-Beta-1.5.4-Build-13.dmg
 !/Release/VirtualTouch-AI-Beta-1.6-Build-14.dmg
+!/Release/VirtualTouch-AI-Beta-1.6.1-Build-15.dmg
 *.zip
 *.log

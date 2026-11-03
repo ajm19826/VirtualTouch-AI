@@ -75,25 +75,25 @@ struct FloatingOverlayView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Label(controller.isTracking ? "Tracking" : "Stopped",
                           systemImage: controller.isTracking ? "checkmark.circle.fill" : "stop.circle")
-                        .foregroundStyle(controller.isTracking ? .green : .secondary)
+                        .foregroundColor(controller.isTracking ? .green : .secondary)
                     Text(String(format: "%.0f%%", controller.confidence * 100)).font(.caption.bold())
                     Text(String(format: "%.1f FPS", camera.fps)).font(.caption2)
                     Text(controller.positionGuidance)
                         .font(.caption2)
                         .lineLimit(3)
-                        .foregroundStyle(.orange)
+                        .foregroundColor(.orange)
                 }.frame(width: 78)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(controller.gestureName).font(.caption.bold())
                     Text(controller.swipeName).font(.caption2)
                     Button("End Session") { controller.endSession() }
-                        .buttonStyle(.borderedProminent)
+                        .buttonStyle(.bordered)
                         .controlSize(.small)
                 }.frame(width: 110)
             }
         }
         .padding(8)
-        .background(.regularMaterial)
+        .background(Color(NSColor.controlBackgroundColor))
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
@@ -129,7 +129,7 @@ struct MiniScreenView: View {
                     }
                 }.stroke(Color.white.opacity(0.14), lineWidth: 1)
                 Circle()
-                    .fill(controller.clickDetected ? Color.red : Color.cyan)
+                    .fill(controller.clickDetected ? Color.red : Color.blue)
                     .frame(width: controller.clickDetected ? 18 : 12, height: controller.clickDetected ? 18 : 12)
                     .position(miniScreenPosition(in: geometry.size))
             }

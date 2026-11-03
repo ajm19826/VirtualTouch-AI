@@ -23,17 +23,18 @@ struct ContentView: View {
             detailView()
                 .frame(minWidth: 640, minHeight: 500)
         }
-        .overlay(alignment: .bottomTrailing) {
-            Text("BETA 1.6 · BUILD 14")
+        .overlay(
+            Text("BETA 1.6.1 · BUILD 15")
                 .font(.system(size: 10, weight: .semibold, design: .rounded))
-                .foregroundStyle(.secondary)
+                .foregroundColor(.secondary)
                 .padding(.horizontal, 8)
                 .padding(.vertical, 5)
-                .background(.ultraThinMaterial)
+                .background(Color(NSColor.controlBackgroundColor))
                 .clipShape(RoundedRectangle(cornerRadius: 6))
                 .padding(.trailing, 12)
-                .padding(.bottom, 10)
-        }
+                .padding(.bottom, 10),
+            alignment: .bottomTrailing
+        )
         .onReceive(camera.$latestFrame) { frame in controller.process(frame) }
         .onAppear { camera.requestAccess() }
     }
@@ -99,7 +100,7 @@ struct DashboardView: View {
                     Button(controller.isTracking ? "Stop VirtualTouch" : "Start VirtualTouch") {
                         controller.isTracking ? controller.stop() : controller.start()
                         camera.isRunning ? camera.stop() : camera.start()
-                    }.buttonStyle(.borderedProminent)
+                    }.buttonStyle(.bordered)
                     Button("Calibrate") { showCalibration = true }
                 }
             }.padding(24)
@@ -124,10 +125,10 @@ struct StatusCard: View {
     let title: String; let value: String; let color: Color
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(title).font(.caption).foregroundStyle(.secondary)
-            Text(value).font(.headline).foregroundStyle(color)
+            Text(title).font(.caption).foregroundColor(.secondary)
+            Text(value).font(.headline).foregroundColor(color)
         }.frame(maxWidth: .infinity, minHeight: 76, alignment: .leading).padding(14)
-            .background(.regularMaterial).clipShape(RoundedRectangle(cornerRadius: 8))
+            .background(Color(NSColor.controlBackgroundColor)).clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }
 
@@ -150,7 +151,7 @@ struct VirtualTouchView: View {
             }
             Label(controller.positionGuidance, systemImage: "person.crop.circle.badge.questionmark")
                 .font(.caption)
-                .foregroundStyle(.orange)
+                .foregroundColor(.orange)
         }.padding(24)
     }
 }
@@ -160,15 +161,15 @@ struct CalibrationView: View {
     @EnvironmentObject var controller: VirtualTouchController
     var body: some View {
         Form {
-            Section("Profiles") {
+            Section(header: Text("Profiles")) {
                 Text("Default profile")
                 Text(controller.calibrationStatus)
             }
-            Section("Actions") {
+            Section(header: Text("Actions")) {
                 Button("Start or Recalibrate") {
                     FullScreenCalibrationController.shared.show(camera: camera, controller: controller)
                 }
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyle(.bordered)
                 Button("Reset Calibration") { controller.resetCalibration() }
                 Button("Request Accessibility Permission") { controller.requestAccessibility() }
             }
@@ -185,7 +186,7 @@ struct CalibrationWizardView: View {
     let targets: [(String, UnitPoint)] = [("Top left", .topLeading), ("Top center", .top), ("Top right", .topTrailing), ("Middle left", .leading), ("Center", .center), ("Middle right", .trailing), ("Bottom left", .bottomLeading), ("Bottom center", .bottom), ("Bottom right", .bottomTrailing)]
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Color.black.opacity(0.08).ignoresSafeArea()
+            Color.black.opacity(0.08).edgesIgnoringSafeArea(.all)
             GeometryReader { geometry in
                 Circle().fill(.blue).frame(width: 44, height: 44)
                     .position(x: geometry.size.width * targets[index].1.x, y: geometry.size.height * targets[index].1.y)
@@ -202,17 +203,17 @@ struct CalibrationWizardView: View {
             }
             VStack {
                 Text("Calibrating: \(targets[index].0)").font(.headline)
-                Text("Point toward the target and hold briefly.").foregroundStyle(.secondary)
-                Text("Samples for this target: \(targetSamples)/5").font(.caption).foregroundStyle(targetSamples >= 5 ? .green : .secondary)
-                Text(controller.calibrationStatus).font(.caption).foregroundStyle(.secondary)
+                Text("Point toward the target and hold briefly.").foregroundColor(.secondary)
+                Text("Samples for this target: \(targetSamples)/5").font(.caption).foregroundColor(targetSamples >= 5 ? .green : .secondary)
+                Text(controller.calibrationStatus).font(.caption).foregroundColor(.secondary)
                 Label(camera.latestFrame.wrist == nil ? "No usable wrist/arm landmarks" : "Arm direction detected",
                       systemImage: camera.latestFrame.wrist == nil ? "exclamationmark.triangle" : "checkmark.circle.fill")
                     .font(.caption)
-                    .foregroundStyle(camera.latestFrame.wrist == nil ? .orange : .green)
+                    .foregroundColor(camera.latestFrame.wrist == nil ? .orange : .green)
                 HStack {
                     Button("Capture 5 samples") {
                         for offset in 0..<5 {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + Double(offset) * 0.12) {
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(offset) * 0.12) {
                                 if controller.addCalibrationSample(camera.latestFrame, target: screenPoint(in: NSScreen.main?.frame ?? .zero, unit: targets[index].1)) {
                                     targetSamples += 1
                                 }
@@ -230,7 +231,7 @@ struct CalibrationWizardView: View {
                             index += 1
                             targetSamples = 0
                         }
-                    }.buttonStyle(.borderedProminent)
+                    }.buttonStyle(.bordered)
                     Button("Cancel") {
                         isPresented = false
                         NotificationCenter.default.post(name: .calibrationDismiss, object: nil)
@@ -257,7 +258,7 @@ struct ModelView: View {
             StatusCard(title: "Active model", value: "VirtualTouch Local v1", color: .blue)
             StatusCard(title: "Training status", value: "Ready", color: .green)
             StatusCard(title: "Calibration samples", value: "\(controller.calibrationSampleCount) stored locally", color: .blue)
-            Text(controller.calibrationStatus).font(.caption).foregroundStyle(.secondary)
+            Text(controller.calibrationStatus).font(.caption).foregroundColor(.secondary)
             Button("Reset and retrain") { controller.resetCalibration() }
         }.padding(24)
     }
@@ -285,7 +286,7 @@ struct SettingsView: View {
             Toggle("Dwell-to-click", isOn: $controller.dwellClickEnabled)
             Toggle("Mirror camera horizontally", isOn: $controller.mirrorCameraX)
             Toggle("Say 'Click'", isOn: Binding(get: { controller.voiceClickEnabled }, set: { controller.setVoiceClick($0) }))
-            Text(controller.voiceClickStatus).font(.caption).foregroundStyle(.secondary)
+            Text(controller.voiceClickStatus).font(.caption).foregroundColor(.secondary)
         }.padding(24)
     }
 }
@@ -299,7 +300,7 @@ struct DiagnosticsView: View {
             StatusCard(title: "Camera permission", value: camera.permissionGranted ? "Granted" : "Not granted", color: camera.permissionGranted ? .green : .orange)
             StatusCard(title: "Accessibility permission", value: controller.accessibilityTrusted ? "Granted" : "Not granted", color: controller.accessibilityTrusted ? .green : .orange)
             StatusCard(title: "Input simulation", value: controller.accessibilityTrusted ? "Available" : "Requires permission", color: controller.accessibilityTrusted ? .green : .orange)
-            Text(controller.accessibilityStatus).font(.caption).foregroundStyle(.secondary)
+            Text(controller.accessibilityStatus).font(.caption).foregroundColor(.secondary)
             HStack {
                 Button("Request Accessibility Permission") { controller.requestAccessibility() }
                 Button("Test left click") { controller.testClick() }
@@ -326,7 +327,7 @@ struct TutorialView: View {
                 Text("Supported gestures").font(.headline)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 8) {
                     ForEach(controller.gestureCatalog, id: \.self) { gesture in
-                        Text(gesture).padding(8).frame(maxWidth: .infinity).background(.regularMaterial).clipShape(RoundedRectangle(cornerRadius: 6))
+                        Text(gesture).padding(8).frame(maxWidth: .infinity).background(Color(NSColor.controlBackgroundColor)).clipShape(RoundedRectangle(cornerRadius: 6))
                     }
                 }
             }.padding(24)
@@ -340,8 +341,8 @@ struct TutorialStep: View {
     let text: String
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Text(number).font(.headline).frame(width: 30, height: 30).background(Color.accentColor).foregroundStyle(.white).clipShape(Circle())
-            VStack(alignment: .leading, spacing: 4) { Text(title).font(.headline); Text(text).foregroundStyle(.secondary) }
+            Text(number).font(.headline).frame(width: 30, height: 30).background(Color.accentColor).foregroundColor(.white).clipShape(Circle())
+            VStack(alignment: .leading, spacing: 4) { Text(title).font(.headline); Text(text).foregroundColor(.secondary) }
         }
     }
 }
@@ -350,7 +351,7 @@ struct AboutView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("VirtualTouch AI") .font(.title.bold())
-            Text("Local, privacy-first virtual touchscreen for macOS").foregroundStyle(.secondary)
+            Text("Local, privacy-first virtual touchscreen for macOS").foregroundColor(.secondary)
             Text("All camera processing and calibration stay on this computer.")
         }.padding(24)
     }
